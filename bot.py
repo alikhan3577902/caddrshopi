@@ -26,7 +26,7 @@ from chk_command import register_handlers as register_chk_handlers
 API_ID = 21124241
 API_HASH = "b7ddce3d3683f54be788fddae73fa468"
 BOT_TOKEN = "8494612492:AAGLoWbxF-9Q7pnTCruvwxqPYbCShfw3I1M" # Replace with your Bot Token
-ADMIN_ID = [5920449511] # Replace with your Admin ID(s)
+ADMIN_ID = [5920449511,7292047135,7979093116] # Replace with your Admin ID(s)
 GROUP_ID = -1002987450285 # Replace with your Group ID
 
 # Files
