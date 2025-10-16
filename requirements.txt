@@ -3,6 +3,7 @@ pyrogram
 python-telegram-bot
 requests
 aiohttp
+aiofiles
 python-dotenv
 pillow
 sqlalchemy
