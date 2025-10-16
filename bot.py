@@ -14,6 +14,38 @@ from py_commands import register_handlers as register_py_handlers
 from sq_commands import register_handlers as register_sq_handlers
 from chk_command import register_handlers as register_chk_handlers
 
+
+from http.server import HTTPServer, BaseHTTPRequestHandler
+import os
+
+class KeepAliveHandler(BaseHTTPRequestHandler):
+    def do_GET(self):
+        self.send_response(200)
+        self.send_header('Content-type', 'text/plain')
+        self.end_headers()
+        self.wfile.write(b"I'm alive")
+
+def run(server_class=HTTPServer, handler_class=KeepAliveHandler):
+    # Use the PORT environment variable provided by Render, default to 8080 for local testing
+    port = int(os.environ.get('PORT', 8080))
+    server_address = ('', port)
+    httpd = server_class(server_address, handler_class)
+    print(f"Server running on port {port}")
+    try:
+        httpd.serve_forever()
+    except KeyboardInterrupt:
+        httpd.server_close()
+        print("Server stopped")
+
+if __name__ == '__main__':
+    run()
+
+
+
+
+
+
+
 # Config
 API_ID = 21124241
 API_HASH = "b7ddce3d3683f54be788fddae73fa468"
