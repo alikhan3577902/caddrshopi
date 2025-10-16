@@ -9,7 +9,7 @@ import re
 import json
 import random
 import string
-from user_agent import generate_user_agent
+from fake_useragent import UserAgent
 from requests_toolbelt.multipart.encoder import MultipartEncoder
 
 # --- Globals ---
