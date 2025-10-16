@@ -10,3 +10,4 @@ sqlalchemy
 pymysql
 beautifulsoup4
 lxml
+requests_toolbelt
